@@ -20,6 +20,7 @@ public class Calculadora_Matrices {
         int fila1, fila2;
         int col1, col2;
         int num;
+        String mens;
 
         do {
             System.out.println("Elja Una Opcion: \n1.Suma de Matrices \n2.Prodcuto Punto \n3.Matriz por un escalar \n4.Matriz Traspuesta \n5.Salir");
@@ -134,7 +135,7 @@ public class Calculadora_Matrices {
 
                 case 3: {
                     System.out.println("Elija un tamaño de matriz \n1.2X2 \n2.3X3 \n3.4X4 ");
-                    opcion2 = in.nextInt();
+                    opcion2 = Lectura.cap();
                     switch (opcion2) {
 
                         case 1: {
@@ -142,23 +143,25 @@ public class Calculadora_Matrices {
                             tam = 2;
                             int matrizA[][] = new int[tam][tam];
                             int matrizB[][] = new int[tam][tam];
-                            for (int i = 0; i < tam; i++) {
+                            /*for (int i = 0; i < tam; i++) {
                                 for (int j = 0; j < tam; j++) {
                                     System.out.println("Ingrese un valor para la matriz");
                                     matrizA[i][j] = in.nextInt();
                                 }
-                            }
-                            System.out.println("Ingrese un numero por el que multiplicar la matriz");
-                            num = in.nextInt();
+                            }*/
+                            mens="Ingrese un numero por el que multiplicar la matriz";
+                            Lectura.imprimir(mens);
+                            //System.out.println("Ingrese un numero por el que multiplicar la matriz");
+                            num = Lectura.cap();
 
                             matrizB = Operaciones2.escalar(tam, num, matrizA);
-                            for (int i = 0; i < tam; i++) {
+                            /*for (int i = 0; i < tam; i++) {
                                 for (int j = 0; j < tam; j++) {
                                     System.out.print(matrizB[i][j] + "\t");
 
                                 }
                                 System.out.print("\n");
-                            }
+                            }*/
                             break;
 
                         }
