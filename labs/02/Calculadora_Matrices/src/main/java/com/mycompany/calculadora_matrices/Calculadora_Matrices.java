@@ -28,15 +28,14 @@ public class Calculadora_Matrices {
             switch (opcion) {
 
                 case 1: {
-                   // System.out.println("ingrese el numero de filas de la matriz");
+                    System.out.println("ingrese el numero de filas de la matriz");
                     tam = Lectura.cap();
 
                     int matrizA[][] = new int[tam][tam];
                     int matrizB[][] = new int[tam][tam];
                     int matrizC[][] = new int[tam][tam];
                     int matrizD[][] = new int[tam][tam];
-                    
-                    
+
                     /*for (int i = 0; i < tam; i++) {
                         for (int j = 0; j < tam; j++) {
 
@@ -46,10 +45,12 @@ public class Calculadora_Matrices {
                         }
 
                     }*/
-                    matrizA=Lectura.matriz_cuadrada();
+                    System.out.println("Ingrese los numeros para la matriz A:");
+                    matrizA = Lectura.matriz_cuadrada();
+
+                    System.out.println("=================================================");
                     
-                    System.out.println("==============================================");
-                    
+                    System.out.println("Ingrese los numeros para la matriz B:");
                     matrizB = Lectura.matriz_cuadrada();
                     /*for (int i = 0; i < tam; i++) {
                         for (int j = 0; j < tam; j++) {
@@ -76,19 +77,20 @@ public class Calculadora_Matrices {
 
                 case 2: {
                     System.out.println("Ingrese el numero de filas de la primera Matriz");
-                    fila1 = in.nextInt();
+                    fila1 = Lectura.cap();
                     System.out.println("Ingrese el numero de columnas de la primera Matriz");
-                    col1 = in.nextInt();
+                    col1 = Lectura.cap();
                     System.out.println("Ingrese el numero de filas de la segunda Matriz");
-                    fila2 = in.nextInt();
+                    fila2 = Lectura.cap();
                     System.out.println("Ingrese el numero de columnas de la segunda Matriz");
-                    col2 = in.nextInt();
+                    col2 = Lectura.cap();
+
                     int matrizA[][] = new int[fila1][col1];
                     int matrizB[][] = new int[fila2][col2];
                     int matrizC[][] = new int[fila1][col2];
                     if (col1 == fila2) {
-
-                        for (int i = 0; i < fila1; i++) {
+                        matrizA = Lectura.matriz_cuadrada();
+                        /*for (int i = 0; i < fila1; i++) {
                             for (int j = 0; j < col1; j++) {
 
                                 System.out.println("Ingrese un numero para la matriz A:");
@@ -96,7 +98,7 @@ public class Calculadora_Matrices {
 
                             }
 
-                        }
+                        }*/
 
                         for (int i = 0; i < fila2; i++) {
                             for (int j = 0; j < col2; j++) {
@@ -132,7 +134,7 @@ public class Calculadora_Matrices {
 
                         case 1: {
 
-                            tam =2;
+                            tam = 2;
                             int matrizA[][] = new int[tam][tam];
                             int matrizB[][] = new int[tam][tam];
                             for (int i = 0; i < tam; i++) {
@@ -229,13 +231,12 @@ public class Calculadora_Matrices {
                             matrizA[i][j] = in.nextInt();
                         }
                     }
-                    matrizB = Operaciones2.traspuesta(fila1,col1, matrizA);
-                    
+                    matrizB = Operaciones2.traspuesta(fila1, col1, matrizA);
+
                     for (int i = 0; i < col1; i++) {
                         for (int j = 0; j < fila1; j++) {
-                            System.out.print(matrizB[i][j]+ "\t");
-                            
-                            
+                            System.out.print(matrizB[i][j] + "\t");
+
                         }
                         System.out.print("\n");
                     }

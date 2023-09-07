@@ -17,7 +17,7 @@ public class Lectura {
     static Scanner in = new Scanner(System.in);
 
     public static int cap() {
-        System.out.println("ingrese el numero de filas de la matriz");
+        
         tam1 = in.nextInt();
         return tam1;
     }
