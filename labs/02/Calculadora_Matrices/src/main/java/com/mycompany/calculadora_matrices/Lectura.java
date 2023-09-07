@@ -54,21 +54,19 @@ public class Lectura {
 
         return matrizB1;
     }
-    
-    public static void escritura(int a,int b, int c[][]){
-        
-        //int matrizC1[][] =new int[a][b];
-        
+
+    public static void escritura(int a, int b, int c[][]) {
+
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
 
-                System.out.println(c[i][j]);
-                
+                System.out.print(c[i][j] + "\t");
 
             }
+            System.out.print("\n");
 
         }
-        
+
     }
 
 }

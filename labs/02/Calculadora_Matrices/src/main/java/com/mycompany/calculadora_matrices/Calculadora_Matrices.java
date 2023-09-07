@@ -63,15 +63,17 @@ public class Calculadora_Matrices {
                     }*/
 
                     matrizC = op.suma(tam, matrizA, matrizB, matrizD);
+                    Lectura.escritura(tam, tam, matrizC);
 
-                    for (int i = 0; i < tam; i++) {
+                    /*for (int i = 0; i < tam; i++) {
                         for (int j = 0; j < tam; j++) {
 
                             System.out.print(matrizC[i][j] + " ");
 
                         }
                         System.out.print("\n");
-                    }
+                    }*/
+                    break;
 
                 }
 
@@ -126,6 +128,7 @@ public class Calculadora_Matrices {
                     } else {
                         System.out.println("Las dimensiones ingresadas no cumplen los criterios del producto punto");
                     }
+                    break;
 
                 }
 
@@ -156,6 +159,7 @@ public class Calculadora_Matrices {
                                 }
                                 System.out.print("\n");
                             }
+                            break;
 
                         }
 
@@ -184,6 +188,7 @@ public class Calculadora_Matrices {
                                 }
                                 System.out.print("\n");
                             }
+                            break;
 
                         }
                         case 3: {
@@ -210,7 +215,7 @@ public class Calculadora_Matrices {
                                 }
                                 System.out.print("\n");
                             }
-
+                            break;
                         }
 
                     }
@@ -242,7 +247,7 @@ public class Calculadora_Matrices {
                         }
                         System.out.print("\n");
                     }
-
+                    break;
                 }
 
             }
