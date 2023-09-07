@@ -29,7 +29,8 @@ public class Calculadora_Matrices {
             switch (opcion) {
 
                 case 1: {
-                    System.out.println("ingrese el numero de filas de la matriz");
+                    mens="ingrese el numero de filas de la matriz";
+                    Lectura.imprimir(mens);
                     tam = Lectura.cap();
 
                     int matrizA[][] = new int[tam][tam];
@@ -37,43 +38,21 @@ public class Calculadora_Matrices {
                     int matrizC[][] = new int[tam][tam];
                     int matrizD[][] = new int[tam][tam];
 
-                    /*for (int i = 0; i < tam; i++) {
-                        for (int j = 0; j < tam; j++) {
+                    mens = "Ingrese los numeros para la matriz A:";
+                    Lectura.imprimir(mens);
 
-                            System.out.println("Ingrese un numero para la matriz A:");
-                            matrizA[i][j] = in.nextInt();
-
-                        }
-
-                    }*/
-                    System.out.println("Ingrese los numeros para la matriz A:");
                     matrizA = Lectura.matriz_cuadrada();
+                    mens = "===================================================";
+                    Lectura.imprimir(mens);
 
-                    System.out.println("=================================================");
-
-                    System.out.println("Ingrese los numeros para la matriz B:");
+                    
+                    mens="Ingrese los numeros para la matriz B:";
+                    Lectura.imprimir(mens);
                     matrizB = Lectura.matriz_cuadrada();
-                    /*for (int i = 0; i < tam; i++) {
-                        for (int j = 0; j < tam; j++) {
-
-                            System.out.println("Ingrese un numero para la matriz B:");
-                            matrizB[i][j] = in.nextInt();
-
-                        }
-
-                    }*/
 
                     matrizC = op.suma(tam, matrizA, matrizB, matrizD);
                     Lectura.escritura(tam, tam, matrizC);
 
-                    /*for (int i = 0; i < tam; i++) {
-                        for (int j = 0; j < tam; j++) {
-
-                            System.out.print(matrizC[i][j] + " ");
-
-                        }
-                        System.out.print("\n");
-                    }*/
                     break;
 
                 }
@@ -94,37 +73,12 @@ public class Calculadora_Matrices {
                     if (col1 == fila2) {
                         System.out.println("Ingrese los numeros para la matriz A:");
                         matrizA = Lectura.matriz_dim(fila1, col1);
-                        /*for (int i = 0; i < fila1; i++) {
-                            for (int j = 0; j < col1; j++) {
 
-                                System.out.println("Ingrese un numero para la matriz A:");
-                                matrizA[i][j] = in.nextInt();
-
-                            }
-
-                        }*/
                         System.out.println("Ingrese los numeros para la matriz B:");
                         matrizB = Lectura.matriz_dim(fila2, col2);
-                        /*for (int i = 0; i < fila2; i++) {
-                            for (int j = 0; j < col2; j++) {
-
-                                System.out.println("Ingrese un numero para la matriz B:");
-                                matrizB[i][j] = in.nextInt();
-
-                            }
-
-                        }*/
 
                         matrizC = op.producto(fila1, col1, fila2, col2, matrizA, matrizB);
                         Lectura.escritura(fila1, col2, matrizC);
-                        /*for (int i = 0; i < fila1; i++) {
-                            for (int j = 0; j < col2; j++) {
-
-                                System.out.print(matrizC[i][j] + " ");
-
-                            }
-                            System.out.print("\n");
-                        }*/
 
                     } else {
                         System.out.println("Las dimensiones ingresadas no cumplen los criterios del producto punto");
@@ -134,7 +88,8 @@ public class Calculadora_Matrices {
                 }
 
                 case 3: {
-                    System.out.println("Elija un tamaño de matriz \n1.2X2 \n2.3X3 \n3.4X4 ");
+                    mens="Elija un tamaño de matriz \n1.2X2 \n2.3X3 \n3.4X4 ";
+                    Lectura.imprimir(mens);
                     opcion2 = Lectura.cap();
                     switch (opcion2) {
 
@@ -143,25 +98,15 @@ public class Calculadora_Matrices {
                             tam = 2;
                             int matrizA[][] = new int[tam][tam];
                             int matrizB[][] = new int[tam][tam];
-                            /*for (int i = 0; i < tam; i++) {
-                                for (int j = 0; j < tam; j++) {
-                                    System.out.println("Ingrese un valor para la matriz");
-                                    matrizA[i][j] = in.nextInt();
-                                }
-                            }*/
-                            mens="Ingrese un numero por el que multiplicar la matriz";
+
+                            mens = "Ingrese un numero por el que multiplicar la matriz";
                             Lectura.imprimir(mens);
-                            //System.out.println("Ingrese un numero por el que multiplicar la matriz");
+
                             num = Lectura.cap();
 
                             matrizB = Operaciones2.escalar(tam, num, matrizA);
-                            /*for (int i = 0; i < tam; i++) {
-                                for (int j = 0; j < tam; j++) {
-                                    System.out.print(matrizB[i][j] + "\t");
+                            Lectura.escritura(tam, tam, matrizB);
 
-                                }
-                                System.out.print("\n");
-                            }*/
                             break;
 
                         }
@@ -170,14 +115,14 @@ public class Calculadora_Matrices {
                             tam = 3;
                             int matrizA[][] = new int[tam][tam];
                             int matrizB[][] = new int[tam][tam];
-
-                            for (int i = 0; i < tam; i++) {
+                             Lectura.matriz_dim(tam, tam);
+                            /*for (int i = 0; i < tam; i++) {
                                 for (int j = 0; j < tam; j++) {
                                     System.out.println("Ingrese un valor para la matriz");
                                     matrizA[i][j] = in.nextInt();
 
                                 }
-                            }
+                            }*/
 
                             System.out.println("Ingrese un numero por el que multiplicar la matriz");
                             num = in.nextInt();
