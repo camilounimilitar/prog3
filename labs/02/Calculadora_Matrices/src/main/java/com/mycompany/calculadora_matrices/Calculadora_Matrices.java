@@ -90,7 +90,7 @@ public class Calculadora_Matrices {
                     int matrizC[][] = new int[fila1][col2];
                     if (col1 == fila2) {
                         System.out.println("Ingrese los numeros para la matriz A:");
-                        matrizA = Lectura.matriz_cuadrada();
+                        matrizA = Lectura.matriz_dim(fila1, col1);
                         /*for (int i = 0; i < fila1; i++) {
                             for (int j = 0; j < col1; j++) {
 
@@ -101,7 +101,7 @@ public class Calculadora_Matrices {
 
                         }*/
                         System.out.println("Ingrese los numeros para la matriz B:");
-                        matrizB = 
+                        matrizB = Lectura.matriz_dim(fila2, col2);
                         /*for (int i = 0; i < fila2; i++) {
                             for (int j = 0; j < col2; j++) {
 
@@ -113,15 +113,15 @@ public class Calculadora_Matrices {
                         }*/
 
                         matrizC = op.producto(fila1, col1, fila2, col2, matrizA, matrizB);
-
-                        for (int i = 0; i < fila1; i++) {
+                        Lectura.escritura(fila1, col2, matrizC);
+                        /*for (int i = 0; i < fila1; i++) {
                             for (int j = 0; j < col2; j++) {
 
                                 System.out.print(matrizC[i][j] + " ");
 
                             }
                             System.out.print("\n");
-                        }
+                        }*/
 
                     } else {
                         System.out.println("Las dimensiones ingresadas no cumplen los criterios del producto punto");

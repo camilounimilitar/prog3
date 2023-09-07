@@ -17,7 +17,7 @@ public class Lectura {
     static Scanner in = new Scanner(System.in);
 
     public static int cap() {
-        
+
         tam1 = in.nextInt();
         return tam1;
     }
@@ -38,15 +38,37 @@ public class Lectura {
 
         return matrizA1;
     }
+
+    public static int[][] matriz_dim(int a, int b) {
+        int matrizB1[][] = new int[a][b];
+
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+
+                System.out.println("Ingrese un numero para la matriz :");
+                matrizB1[i][j] = in.nextInt();
+
+            }
+
+        }
+
+        return matrizB1;
+    }
     
-    public static int[][] matriz_dim(int a, int b){
-    int matrizB1[][]= new int[a][b];
-    
-            
-    
-    
-}
-    
-    
+    public static void escritura(int a,int b, int c[][]){
+        
+        //int matrizC1[][] =new int[a][b];
+        
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+
+                System.out.println(c[i][j]);
+                
+
+            }
+
+        }
+        
+    }
 
 }
