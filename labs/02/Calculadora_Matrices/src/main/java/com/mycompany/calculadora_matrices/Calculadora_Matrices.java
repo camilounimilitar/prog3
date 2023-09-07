@@ -28,15 +28,16 @@ public class Calculadora_Matrices {
             switch (opcion) {
 
                 case 1: {
-                    System.out.println("ingrese el numero de filas de la matriz");
-                    tam = in.nextInt();
+                   // System.out.println("ingrese el numero de filas de la matriz");
+                    tam = Lectura.cap();
 
                     int matrizA[][] = new int[tam][tam];
                     int matrizB[][] = new int[tam][tam];
                     int matrizC[][] = new int[tam][tam];
                     int matrizD[][] = new int[tam][tam];
-
-                    for (int i = 0; i < tam; i++) {
+                    
+                    
+                    /*for (int i = 0; i < tam; i++) {
                         for (int j = 0; j < tam; j++) {
 
                             System.out.println("Ingrese un numero para la matriz A:");
@@ -44,10 +45,13 @@ public class Calculadora_Matrices {
 
                         }
 
-                    }
+                    }*/
+                    matrizA=Lectura.matriz_cuadrada();
+                    
                     System.out.println("==============================================");
-
-                    for (int i = 0; i < tam; i++) {
+                    
+                    matrizB = Lectura.matriz_cuadrada();
+                    /*for (int i = 0; i < tam; i++) {
                         for (int j = 0; j < tam; j++) {
 
                             System.out.println("Ingrese un numero para la matriz B:");
@@ -55,7 +59,7 @@ public class Calculadora_Matrices {
 
                         }
 
-                    }
+                    }*/
 
                     matrizC = op.suma(tam, matrizA, matrizB, matrizD);
 
@@ -128,7 +132,7 @@ public class Calculadora_Matrices {
 
                         case 1: {
 
-                            tam = 2;
+                            tam =2;
                             int matrizA[][] = new int[tam][tam];
                             int matrizB[][] = new int[tam][tam];
                             for (int i = 0; i < tam; i++) {
