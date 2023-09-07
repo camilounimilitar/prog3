@@ -49,7 +49,7 @@ public class Calculadora_Matrices {
                     matrizA = Lectura.matriz_cuadrada();
 
                     System.out.println("=================================================");
-                    
+
                     System.out.println("Ingrese los numeros para la matriz B:");
                     matrizB = Lectura.matriz_cuadrada();
                     /*for (int i = 0; i < tam; i++) {
@@ -89,6 +89,7 @@ public class Calculadora_Matrices {
                     int matrizB[][] = new int[fila2][col2];
                     int matrizC[][] = new int[fila1][col2];
                     if (col1 == fila2) {
+                        System.out.println("Ingrese los numeros para la matriz A:");
                         matrizA = Lectura.matriz_cuadrada();
                         /*for (int i = 0; i < fila1; i++) {
                             for (int j = 0; j < col1; j++) {
@@ -99,8 +100,9 @@ public class Calculadora_Matrices {
                             }
 
                         }*/
-
-                        for (int i = 0; i < fila2; i++) {
+                        System.out.println("Ingrese los numeros para la matriz B:");
+                        matrizB = 
+                        /*for (int i = 0; i < fila2; i++) {
                             for (int j = 0; j < col2; j++) {
 
                                 System.out.println("Ingrese un numero para la matriz B:");
@@ -108,7 +110,7 @@ public class Calculadora_Matrices {
 
                             }
 
-                        }
+                        }*/
 
                         matrizC = op.producto(fila1, col1, fila2, col2, matrizA, matrizB);
 

@@ -38,5 +38,15 @@ public class Lectura {
 
         return matrizA1;
     }
+    
+    public static int[][] matriz_dim(int a, int b){
+    int matrizB1[][]= new int[a][b];
+    
+            
+    
+    
+}
+    
+    
 
 }
