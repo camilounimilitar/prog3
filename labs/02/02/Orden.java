@@ -27,18 +27,25 @@ public class Orden {
         Mostrar.imprimir_double(total);
         return u;
     }
-    public static double[] insercion(double u[]){
-        double posicion,aux;
-        
-        for(int i=0; i<u.length;i++){
-        posicion=i;
-        aux=u[i];
-            
-            
+
+    public static double[] insercion(double u[]) {
+        double aux, inicio, fin, total;
+        int posicion;
+        inicio = System.nanoTime();
+        for (int i = 0; i < u.length; i++) {
+            posicion = i;
+            aux = u[i];
+
+            while ((posicion > 0) && (u[posicion - 1] > aux)) {
+                u[posicion] = u[posicion - 1];
+                posicion--;
+            }
+            u[posicion] = aux;
         }
-        
+        fin = System.nanoTime();
+        total = fin - inicio;
+        return u;
+
     }
-    
-    
 
 }
