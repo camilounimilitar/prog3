@@ -9,6 +9,9 @@
  */
 public class Mostrar {
     
+    public static  void menu(){
+        
+    }
     public static void imprimir(double o[]){
         for(int i=0; i<o.length;i++){
             System.out.println(o[i] + "\t");

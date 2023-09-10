@@ -9,18 +9,22 @@
 public class Metodos {
 
     public static void main(String[] args) {
-        Metodos h=new Metodos();
-         
-        
-        int tam=100;
+
+        int opcion, tam = 100;
         double m[] = new double[tam];
+
+        do {
+            switch (opcion) {
+                case 1:{
+                m = Llenado.ramdom(tam, m);  m = Orden.burbuja1(tam, m);   Mostrar.imprimir(m);
+                }
+            }
+        } while (opcion != 5);
+
         
-        m=Llenado.ramdom(tam, m);
-        m=Orden.burbuja1(tam, m);
-        Mostrar.imprimir(m);
+        
+       
 
     }
-    
-    
-    
+
 }
