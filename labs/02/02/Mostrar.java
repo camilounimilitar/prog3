@@ -10,7 +10,7 @@
 public class Mostrar {
     
     public static  void menu(){
-        
+        System.out.println("Elija una opcion: \n1.100 Datos \n2.500 datos \n3.1000 \n4.5000 \n5.10000");
     }
     public static void imprimir(double o[]){
         for(int i=0; i<o.length;i++){

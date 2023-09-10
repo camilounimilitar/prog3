@@ -10,13 +10,16 @@ public class Metodos {
 
     public static void main(String[] args) {
 
-        int opcion, tam = 100;
-        double m[] = new double[tam];
-
+        int opcion, tam;
         do {
+            Mostrar.menu();
+            opcion=Llenado.captura();
             switch (opcion) {
                 case 1:{
-                m = Llenado.ramdom(tam, m);  m = Orden.burbuja1(tam, m);   Mostrar.imprimir(m);
+                tam=100; double m[] = new double[tam]; m = Llenado.ramdom(tam, m);  m = Orden.burbuja1(tam, m); break;
+                }
+                case 2: {
+                    
                 }
             }
         } while (opcion != 5);
