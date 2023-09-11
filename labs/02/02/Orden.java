@@ -9,7 +9,7 @@
  */
 public class Orden {
 
-    public static double[] burbuja1(int a, double u[]) {
+    public static double burbuja1(int a, double u[]) {
         double aux1, inicio, fin, total;
         inicio = System.nanoTime();
         for (int i = 0; i < a - 1; i++) {
@@ -25,10 +25,10 @@ public class Orden {
         fin = System.nanoTime();
         total = fin - inicio;
         Mostrar.imprimir_double(total);
-        return u;
+        return total;
     }
 
-    public static double[] insercion(double u[]) {
+    public static double insercion(double u[]) {
         double aux, inicio, fin, total;
         int posicion;
         inicio = System.nanoTime();
@@ -44,8 +44,33 @@ public class Orden {
         }
         fin = System.nanoTime();
         total = fin - inicio;
-        return u;
+        return total;
 
     }
+    
+    public static double seleccion(double a[]){
+        int min;
+        double aux,inicio,fin,total;
+        inicio=System.nanoTime();
+        for(int i=0; i<a.length;i++){
+            min=i;
+            for(int j=0;j<a.length;j++){
+                if(a[j]<a[min]){
+                    min=j;
+                }
+            }
+            aux=a[i];
+            a[i]=a[min];
+            a[min]=aux;
+        }
+        fin=System.nanoTime();
+        total=fin-inicio;
+        return total;
+        
+    }
+    
+    
+    
+    
 
 }
