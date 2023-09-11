@@ -70,7 +70,10 @@ public class Orden {
     }
     
     public static double mergesort(double a[]){
-    double izq[];
+        if(a.length<=1){
+            return a;
+        }else{
+           double izq[];
     double der[];
     
     der=new double[a.length/2];
@@ -83,21 +86,28 @@ public class Orden {
     
     int i;
     for(i=0; i<izq.length;i++){
-        
+        izq[i]=a[i];
     }
     
     int k=0;
     for(int j=i; j<a.length;++j){
-        
+      der[k]=a[j];
+      ++k;
     }
-        
+     //double nuevo[];
+     double nuevo[] =nuevo= merge(mergesort(izq),mergesort(der));
+              
+        }
+    
+    return nuevo;
+    
     }
     
     
     public static double[] merge(double a[],double b[]){
         
         
-       
+      return 
     }
     
     
