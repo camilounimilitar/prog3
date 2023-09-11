@@ -47,69 +47,85 @@ public class Orden {
         return total;
 
     }
-    
-    public static double seleccion(double a[]){
+
+    public static double seleccion(double a[]) {
         int min;
-        double aux,inicio,fin,total;
-        inicio=System.nanoTime();
-        for(int i=0; i<a.length;i++){
-            min=i;
-            for(int j=0;j<a.length;j++){
-                if(a[j]<a[min]){
-                    min=j;
+        double aux, inicio, fin, total;
+        inicio = System.nanoTime();
+        for (int i = 0; i < a.length; i++) {
+            min = i;
+            for (int j = 0; j < a.length; j++) {
+                if (a[j] < a[min]) {
+                    min = j;
                 }
             }
-            aux=a[i];
-            a[i]=a[min];
-            a[min]=aux;
+            aux = a[i];
+            a[i] = a[min];
+            a[min] = aux;
         }
-        fin=System.nanoTime();
-        total=fin-inicio;
+        fin = System.nanoTime();
+        total = fin - inicio;
         return total;
-        
+
     }
-    
-    public static double mergesort(double a[]){
-        if(a.length<=1){
+
+    public static double[] mergesort(double a[]) {
+        if (a.length <= 1) {
             return a;
-        }else{
-           double izq[];
-    double der[];
-    
-    der=new double[a.length/2];
-    
-    if(a.length%2==0){
-        izq=new double[a.length/2];
-    }else{
-       izq=new double[(a.length/2)+1]; 
-    }
-    
-    int i;
-    for(i=0; i<izq.length;i++){
-        izq[i]=a[i];
-    }
-    
-    int k=0;
-    for(int j=i; j<a.length;++j){
-      der[k]=a[j];
-      ++k;
-    }
-     //double nuevo[];
-     double nuevo[] =nuevo= merge(mergesort(izq),mergesort(der));
-              
+        } else {
+            double izq[];
+            double der[];
+
+            der = new double[a.length / 2];
+
+            if (a.length % 2 == 0) {
+                izq = new double[a.length / 2];
+            } else {
+                izq = new double[(a.length / 2) + 1];
+            }
+
+            int i;
+            for (i = 0; i < izq.length; i++) {
+                izq[i] = a[i];
+            }
+
+            int k = 0;
+            for (int j = i; j < a.length; ++j) {
+                der[k] = a[j];
+                ++k;
+            }
+            //double nuevo[];
+            double nuevo[] = merge(mergesort(izq), mergesort(der));
+            return nuevo;
         }
+
+    }
+
+    public static double[] merge(double a[], double b[]) {
+    int i=0;
+    int j=0;    
+        
+    double c[]=new double [a.length+b.length];
     
-    return nuevo;
-    
+    for(int k=0; k< c.length ; k++){
+        if(a[i]<b[j]){
+            c[k]=a[i];
+            ++i;
+            
+        }else{
+            c[k]=b[j];
+            ++j;             
+        }
+        
+        if(i==a.length){
+            ++k;
+            for(j=j;j<b.length;j++){
+                
+            }
+        }        
     }
     
-    
-    public static double[] merge(double a[],double b[]){
-        
-        
-      return 
+        return 
     }
-    
-    
 
 }
