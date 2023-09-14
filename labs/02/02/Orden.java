@@ -8,7 +8,8 @@
  * @author ALEJANDRO
  */
 public class Orden {
-   public static double tot;
+
+    public static double tot;
 
     public static double burbuja1(int a, double u[]) {
         double aux1, inicio, fin, total;
@@ -25,7 +26,7 @@ public class Orden {
         }
         fin = System.nanoTime();
         total = fin - inicio;
-        Mostrar.imprimir_double(total);
+        //Mostrar.imprimir_double(total);
         return total;
     }
 
@@ -71,8 +72,8 @@ public class Orden {
     }
 
     public static double[] mergesort(double a[]) {
-        double fin,inicio,total;
-        inicio=System.nanoTime();
+        double fin, inicio, total;
+        inicio = System.nanoTime();
         if (a.length <= 1) {
             return a;
         } else {
@@ -99,57 +100,56 @@ public class Orden {
             }
             //double nuevo[];
             double nuevo[] = merge(mergesort(izq), mergesort(der));
-           
-           fin=System.nanoTime();
-           tot=fin-inicio;
-           
-           Orden.receptor(tot);
-           
+
+            fin = System.nanoTime();
+            tot = fin - inicio;
+
+            Orden.receptor(tot);
+
             return nuevo;
         }
 
     }
 
     public static double[] merge(double a[], double b[]) {
-    int i=0;
-    int j=0;    
-        
-    double c[]=new double [a.length+b.length];
-    
-    for(int k=0; k< c.length ; k++){
-        if(a[i]<b[j]){
-            c[k]=a[i];
-            ++i;
-            
-        }else{
-            c[k]=b[j];
-            ++j;             
-        }
-        
-        if(i==a.length){
-            ++k;
-            for(j=j;j<b.length;j++){
-              c[k]=b[j];
-              ++k;
+        int i = 0;
+        int j = 0;
+
+        double c[] = new double[a.length + b.length];
+
+        for (int k = 0; k < c.length; k++) {
+            if (a[i] < b[j]) {
+                c[k] = a[i];
+                ++i;
+
+            } else {
+                c[k] = b[j];
+                ++j;
+            }
+
+            if (i == a.length) {
+                ++k;
+                for (j = j; j < b.length; j++) {
+                    c[k] = b[j];
+                    ++k;
+                }
+            } else if (j == b.length) {
+                ++k;
+
+                for (i = i; i < a.length; i++) {
+                    c[k] = a[i];
+                    ++k;
+                }
             }
         }
-        else if(j==b.length){
-            ++k;
-            
-            for(i=i;i<a.length;i++){
-              c[k]=a[i];
-              ++k;
-            }
-        }
-    }
-    
+
         return c;
     }
-    
-    public static double receptor(double rec){
-        
-       double v=rec;
-       return v; 
+
+    public static double receptor(double rec) {
+
+        double v = rec;
+        return v;
     }
 
 }
