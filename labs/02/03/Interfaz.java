@@ -17,10 +17,10 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     int cant, pos = 0;
-    String Mensaje;
-    String marca[]; 
-    String color[]; 
-    int kil[]; 
+    String Mensaje1=" Marca\tColor\tModelo\tKilometraje";
+    String marca[];
+    String color[];
+    int kil[];
     int modelo[];
 
     /**
@@ -44,11 +44,11 @@ public class Interfaz extends javax.swing.JFrame {
         Campo_Cantidad = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Campo_Color = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        boton_aceptar = new javax.swing.JButton();
+        boton_agregar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tabla1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Impresion = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,37 +88,34 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("Color:");
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        boton_aceptar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        boton_aceptar.setText("Aceptar");
+        boton_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                boton_aceptarActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        boton_agregar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        boton_agregar.setText("Agregar");
+        boton_agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                boton_agregarActionPerformed(evt);
             }
         });
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jButton3.setText("Limpiar");
-
-        Tabla1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(Tabla1);
+        });
+
+        Impresion.setColumns(20);
+        Impresion.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Impresion.setRows(5);
+        jScrollPane2.setViewportView(Impresion);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,9 +134,9 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Campo_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addComponent(boton_aceptar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(boton_agregar)
                                 .addGap(71, 71, 71)
                                 .addComponent(jButton3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -157,9 +154,11 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Campo_Kilometraje, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                    .addComponent(Campo_Color)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                                    .addComponent(Campo_Color)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +169,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Campo_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(boton_aceptar))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label1)
@@ -185,11 +184,10 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(Campo_Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(boton_agregar)
                     .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -210,37 +208,45 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Campo_ModeloActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void boton_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_aceptarActionPerformed
         cant = Integer.parseInt(Campo_Cantidad.getText());
+        marca = new String[cant];
+        modelo = new int[cant];
+        kil = new int[cant];
+        color = new String[cant];
 
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_boton_aceptarActionPerformed
 
     private void Campo_CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_CantidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Campo_CantidadActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(pos<cant){
-        marca= new String[cant];marca[pos] = Campo_Marca.getText();
-        modelo= new int[cant]; modelo[pos] = Integer.parseInt(Campo_Modelo.getText());
-        kil= new int[cant];kil[pos] = Integer.parseInt(Campo_Kilometraje.getText());
-        color= new String[cant];color[pos] = Campo_Color.getText();
-        pos++;
+    private void boton_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregarActionPerformed
+        if (pos < cant) {
+            marca[pos] = Campo_Marca.getText();
+            modelo[pos] = Integer.parseInt(Campo_Modelo.getText());
+            kil[pos] = Integer.parseInt(Campo_Kilometraje.getText());
+            color[pos] = Campo_Color.getText();
+            pos++;
         }
-        
-        
+        Impresion.setText(Mensaje1+"\n");
+        Impresion.setText(Impresion.getText() + Campo_Marca.getText() + "\t" + Campo_Color.getText() + "\t" + Campo_Modelo.getText() + "\t" + Campo_Kilometraje.getText());
+
         Campo_Marca.setText("");
         Campo_Modelo.setText("");
         Campo_Kilometraje.setText("");
         Campo_Color.setText("");
-       
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_boton_agregarActionPerformed
 
     private void Campo_MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_MarcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Campo_MarcaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,17 +289,17 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField Campo_Kilometraje;
     private javax.swing.JTextField Campo_Marca;
     private javax.swing.JTextField Campo_Modelo;
+    private javax.swing.JTextArea Impresion;
     private javax.swing.JLabel Label1;
-    private javax.swing.JTable Tabla1;
     private javax.swing.JLabel Titulo1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton boton_aceptar;
+    private javax.swing.JButton boton_agregar;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
