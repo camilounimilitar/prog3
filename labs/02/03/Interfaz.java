@@ -16,13 +16,13 @@ public class Interfaz extends javax.swing.JFrame {
         initComponents();
     }
 
-    int cant,pos=0;
+    int cant, pos = 0;
     String Mensaje;
-    String marca[]=new String[cant];
-    String color[] =new String [cant];
-    int kil[]=new int[cant];
-    int modelo[]= new int[cant];
-   
+    String marca[]; 
+    String color[]; 
+    int kil[]; 
+    int modelo[];
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,12 +48,18 @@ public class Interfaz extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tabla1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Titulo1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Titulo1.setText("Venta De Vechiculos");
+
+        Campo_Marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Campo_MarcaActionPerformed(evt);
+            }
+        });
 
         Label1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         Label1.setText("Marca:");
@@ -101,7 +107,7 @@ public class Interfaz extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jButton3.setText("Limpiar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -112,7 +118,7 @@ public class Interfaz extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tabla1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -205,10 +211,9 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Campo_ModeloActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       cant=Integer.parseInt(Campo_Cantidad.getText());
-       
-       
-       
+        cant = Integer.parseInt(Campo_Cantidad.getText());
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Campo_CantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_CantidadActionPerformed
@@ -216,20 +221,26 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_Campo_CantidadActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(pos<cant){
+        marca= new String[cant];marca[pos] = Campo_Marca.getText();
+        modelo= new int[cant]; modelo[pos] = Integer.parseInt(Campo_Modelo.getText());
+        kil= new int[cant];kil[pos] = Integer.parseInt(Campo_Kilometraje.getText());
+        color= new String[cant];color[pos] = Campo_Color.getText();
+        pos++;
+        }
+        
+        
+        Campo_Marca.setText("");
+        Campo_Modelo.setText("");
+        Campo_Kilometraje.setText("");
+        Campo_Color.setText("");
        
-       marca[pos]=Campo_Marca.getText();
-       
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void Campo_MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_MarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Campo_MarcaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,6 +284,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField Campo_Marca;
     private javax.swing.JTextField Campo_Modelo;
     private javax.swing.JLabel Label1;
+    private javax.swing.JTable Tabla1;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -283,6 +295,5 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
