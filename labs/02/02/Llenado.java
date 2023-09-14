@@ -15,7 +15,7 @@ public class Llenado {
 
     public static double[] ramdom(int a, double arreglo[]) {
 
-        for (int i = 0; i < arreglo.length; i++) {
+        for (int i = 0; i < a; i++) {
             arreglo[i] = Math.random() * 100;
         }
         return arreglo;

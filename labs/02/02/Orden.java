@@ -8,6 +8,7 @@
  * @author ALEJANDRO
  */
 public class Orden {
+   public static double tot;
 
     public static double burbuja1(int a, double u[]) {
         double aux1, inicio, fin, total;
@@ -70,6 +71,8 @@ public class Orden {
     }
 
     public static double[] mergesort(double a[]) {
+        double fin,inicio,total;
+        inicio=System.nanoTime();
         if (a.length <= 1) {
             return a;
         } else {
@@ -96,6 +99,12 @@ public class Orden {
             }
             //double nuevo[];
             double nuevo[] = merge(mergesort(izq), mergesort(der));
+           
+           fin=System.nanoTime();
+           tot=fin-inicio;
+           
+           Orden.receptor(tot);
+           
             return nuevo;
         }
 
@@ -120,12 +129,27 @@ public class Orden {
         if(i==a.length){
             ++k;
             for(j=j;j<b.length;j++){
-                
+              c[k]=b[j];
+              ++k;
             }
-        }        
+        }
+        else if(j==b.length){
+            ++k;
+            
+            for(i=i;i<a.length;i++){
+              c[k]=a[i];
+              ++k;
+            }
+        }
     }
     
-        return 
+        return c;
+    }
+    
+    public static double receptor(double rec){
+        
+       double v=rec;
+       return v; 
     }
 
 }

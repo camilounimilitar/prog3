@@ -21,6 +21,11 @@ public class Mostrar {
     public static void imprimir_double(double r){
         
         System.out.println("El Tiempo total fue: " + r);
+        
+    }
+    public static void enunciado(){
+        
+        
     }
     
 }
