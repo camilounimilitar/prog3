@@ -15,10 +15,12 @@ import java.util.logging.Logger;
  * @author ALEJANDRO
  */
 public class Lab0301 {
+    
 
     static Queue<Registro> regis = new LinkedList<>();
 
     public static void main(String[] args) {
+        lec_archivo();
         registro_estudiante();
         registro_asignaturas();
         reporte_registo_final();
@@ -48,15 +50,24 @@ public class Lab0301 {
     public static void lec_archivo() {
         FileReader archi;
         BufferedReader lector;
+        String mensaje="",lec;
 
         try {
-            archi = new FileReader("C:\\Users\\ALEJANDRO\\Documents\\NetBeansProjects\\Lab0301\\data\\asigaturas.txt");
+            archi = new FileReader("C:\\Users\\ALEJANDRO\\Documents\\NetBeansProjects\\Lab0301\\data\\asignaturas.txt");
             if (archi.ready()) {
                 lector=new BufferedReader(archi);
+                
+                while((lec=lector.readLine())!=null){
+                    mensaje=mensaje + lec+"\n";
+                } 
+            }else{
+                System.out.println("El archivo no esta listo para ser leido");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+        
+        System.out.println(mensaje);
     }
 }
