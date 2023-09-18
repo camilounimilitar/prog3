@@ -28,5 +28,7 @@ public class Entrada {
         return imput.nextLine();
      
     }
+     
+     
     
 }
