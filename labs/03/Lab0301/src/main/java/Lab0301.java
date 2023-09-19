@@ -15,31 +15,36 @@ import java.util.logging.Logger;
  * @author ALEJANDRO
  */
 public class Lab0301 {
+
+    static LinkedList<Asignatura> materias = new LinkedList<>();
+    static Queue<Registro> regist = new LinkedList<>();
     
 
-    static Queue<Registro> regis = new LinkedList<>();
-
     public static void main(String[] args) {
-        lec_archivo();
+        
         registro_estudiante();
+        lec_archivo(); Salida.exit("Ingrese Las Materias A Inscribir");
         registro_asignaturas();
         reporte_registo_final();
 
     }
 
     public static void registro_estudiante() {
-        String codigo = Entrada.readText("Cogigo Estudiante");
-        String nombre = Entrada.readText("Nombre estudiante");
-        String correo = Entrada.readText("Correo Estudiante");
-        int semestre = Entrada.readInt("Semestre ");
+        String codigo = Entrada.readText("Ingreese el Cogigo Del Estudiante");
+        String nombre = Entrada.readText("Ingrese El Nombre Del estudiante");
+        String correo = Entrada.readText("Ingrese El Correo Del Estudiante");
+        int semestre = Entrada.readInt("Ingrese El Semestre");
         Estudiante estud = new Estudiante(codigo, nombre, correo, semestre);
-        regis.add(new Registro(estud));
-
+        regist.add(new Registro(estud));
     }
 
     public static void registro_asignaturas() {
-        int codigo = Entrada.readInt("Codigo de la asignatura ");
-        String nom_asignatura = Entrada.readText("Nombre Asignaruta");
+        int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
+        String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
+        int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
+        int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+        String hora = Entrada.readText("Ingrese el horarario ");
+        materias.add(new Asignatura(codigo,nom_asignatura,semestre,num_credi,hora));
 
     }
 
@@ -50,24 +55,23 @@ public class Lab0301 {
     public static void lec_archivo() {
         FileReader archi;
         BufferedReader lector;
-        String mensaje="",lec;
+        String mensaje = "", lec;
 
         try {
             archi = new FileReader("C:\\Users\\ALEJANDRO\\Documents\\NetBeansProjects\\Lab0301\\data\\asignaturas.txt");
             if (archi.ready()) {
-                lector=new BufferedReader(archi);
-                
-                while((lec=lector.readLine())!=null){
-                    mensaje=mensaje + lec+"\n";
-                } 
-            }else{
+                lector = new BufferedReader(archi);
+
+                while ((lec = lector.readLine()) != null) {
+                    mensaje = mensaje + lec + "\n";
+                }
+            } else {
                 System.out.println("El archivo no esta listo para ser leido");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        
         System.out.println(mensaje);
     }
 }

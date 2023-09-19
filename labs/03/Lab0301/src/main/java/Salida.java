@@ -1,6 +1,3 @@
-
-import java.util.LinkedList;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -10,14 +7,10 @@ import java.util.LinkedList;
  *
  * @author ALEJANDRO
  */
-public class Registro {
-    Estudiante estudiante;
-    LinkedList<String> listAsignatura;
+public class Salida {
     
-    Registro(Estudiante estudiante){
-    this.estudiante=estudiante;
-    listAsignatura= new LinkedList<>();
+    public static void exit(String a){
+        System.out.println(a);
     }
-
     
 }
