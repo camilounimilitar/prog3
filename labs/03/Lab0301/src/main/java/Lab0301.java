@@ -18,6 +18,7 @@ public class Lab0301 {
 
     static LinkedList<Asignatura> materias = new LinkedList<>();
     static Queue<Registro> regist = new LinkedList<>();
+    //static int credit=0;
     
 
     public static void main(String[] args) {
@@ -39,12 +40,19 @@ public class Lab0301 {
     }
 
     public static void registro_asignaturas() {
+        int credit=0;
+        while(credit<5){
         int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
         String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
         int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-        int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+        int num_credi = Entrada.readInt("Ingrese el numero de creditos");credit+=num_credi;
         String hora = Entrada.readText("Ingrese el horarario ");
-        materias.add(new Asignatura(codigo,nom_asignatura,semestre,num_credi,hora));
+        materias.add(new Asignatura(codigo,nom_asignatura,semestre,num_credi,hora)); 
+        }
+        if(credit>=5){
+            System.out.println("");
+}
+        
 
     }
 
@@ -74,4 +82,6 @@ public class Lab0301 {
 
         System.out.println(mensaje);
     }
+    
+    
 }
