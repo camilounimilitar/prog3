@@ -12,9 +12,10 @@ import java.util.LinkedList;
  */
 public class Registro {
     Estudiante estudiante;
+    Asignatura asign;
     LinkedList<String> listAsignatura;
     
-    Registro(Estudiante estudiante){
+    Registro(Estudiante estudiante, Asignatura asig){
     this.estudiante=estudiante;
     listAsignatura= new LinkedList<>();
     }

@@ -19,12 +19,12 @@ public class Lab0301 {
     static LinkedList<Asignatura> materias = new LinkedList<>();
     static Queue<Registro> regist = new LinkedList<>();
     //static int credit=0;
-    
 
     public static void main(String[] args) {
-        
+
         registro_estudiante();
-        lec_archivo(); Salida.exit("Ingrese Las Materias A Inscribir");
+        lec_archivo();
+        Salida.exit("Ingrese Las Materias A Inscribir");
         registro_asignaturas();
         reporte_registo_final();
 
@@ -40,23 +40,41 @@ public class Lab0301 {
     }
 
     public static void registro_asignaturas() {
-        int credit=0;
-        while(credit<5){
-        int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
-        String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
-        int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-        int num_credi = Entrada.readInt("Ingrese el numero de creditos");credit+=num_credi;
-        String hora = Entrada.readText("Ingrese el horarario ");
-        materias.add(new Asignatura(codigo,nom_asignatura,semestre,num_credi,hora)); 
+        int credit = 0;
+        boolean f;
+        String pregunta;
+        while (credit < 5) {
+            int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
+            String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
+            int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
+            int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+            String hora = Entrada.readText("Ingrese el horarario ");
+            materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
+            credit += num_credi;
         }
-        if(credit>=5){
-            System.out.println("");
-}
-        
+        if (credit >= 5) {
+            pregunta = Entrada.readText("¿Continuar?");
+            if (pregunta.equalsIgnoreCase("si")) {
+                while (credit < 16) {
+                    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
+                    String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
+                    int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
+                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+                    credit += num_credi;
+                    String hora = Entrada.readText("Ingrese el horarario ");
+                    materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
+                }
+            }else{
+              
+            }
+
+        }
 
     }
 
     public static void reporte_registo_final() {
+        
+        
 
     }
 
@@ -82,6 +100,5 @@ public class Lab0301 {
 
         System.out.println(mensaje);
     }
-    
-    
+
 }
