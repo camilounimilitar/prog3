@@ -28,6 +28,9 @@ public class Entrada {
         return imput.nextLine();
      
     }
+     public static void correcion(){
+         imput.nextLine();
+     }
      
      
     

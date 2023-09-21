@@ -44,10 +44,10 @@ public class Lab0301 {
         String pregunta;
         while (credit < 5) {
             int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
-            String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");Entrada.readText("");
+            String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");Entrada.correcion();
             int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-            int num_credi = Entrada.readInt("Ingrese el numero de creditos");
-            String hora = Entrada.readText("Ingrese el horarario ");Entrada.readText("");
+            int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.readText("");
+            String hora = Entrada.readText("Ingrese el horarario ");
             materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
             credit += num_credi;
         }
@@ -110,7 +110,8 @@ public class Lab0301 {
             
        // }
        for (Asignatura asignatura : materias){
-           System.out.println(asignatura.getCodigo());
+           System.out.println("Asignatura: " + asignatura.getCodigo());
+           //System.out.println("Nombre: "+ asignatura.getNombre());
        }
         
     }
