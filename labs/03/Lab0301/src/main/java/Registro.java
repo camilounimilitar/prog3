@@ -15,10 +15,11 @@ public class Registro {
     Asignatura asign;
     LinkedList<String> listAsignatura;
     
-    Registro(Estudiante estudiante, Asignatura asig){
+    Registro(Estudiante estudiante){
     this.estudiante=estudiante;
     listAsignatura= new LinkedList<>();
     }
+    
 
     
 }
