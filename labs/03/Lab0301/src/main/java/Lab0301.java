@@ -26,8 +26,8 @@ public class Lab0301 {
         lec_archivo();
         Salida.exit("Ingrese Las Materias A Inscribir");
         registro_asignaturas();
-        reporte_registo_final();
-
+        //reporte_registo_final();
+        Salida.exit_Asignatura(materias);
     }
 
     public static void registro_estudiante() {
@@ -55,18 +55,18 @@ public class Lab0301 {
             pregunta = Entrada.readText("¿Continuar?");
             if (pregunta.equalsIgnoreCase("si")) {
                 while (credit < 16) {
-                    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
-                    String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");Entrada.readText("");
+                    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.readText("");
+                    String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
                     int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");
-                    String hora = Entrada.readText("Ingrese el horarario ");Entrada.readText("");
+                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.readText("");
+                    String hora = Entrada.readText("Ingrese el horarario ");
                     credit += num_credi;
                     materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
                 }
             }  
-            else{
+            //else{
               
-            }
+            //}
 
         }
 
@@ -99,6 +99,20 @@ public class Lab0301 {
         }
 
         System.out.println(mensaje);
+    }
+    
+    public static void exit_Asignatura( ){
+        
+        //for(int i=0;i<materias.size();i++){
+            //Asignatura temporal= materias.get(i);
+           // System.out.println(temporal.getNombre());
+                    
+            
+       // }
+       for (Asignatura asignatura : materias){
+           System.out.println(asignatura.getCodigo());
+       }
+        
     }
 
 }

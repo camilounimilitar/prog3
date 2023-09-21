@@ -21,6 +21,8 @@ public class Salida {
         
         for(int i=0;i<m.size();i++){
             Asignatura temporal= m.get(i);
+            System.out.println(temporal.getNombre());
+                    
             
         }
         
