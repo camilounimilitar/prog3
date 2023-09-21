@@ -42,12 +42,10 @@ public class Lab0301 {
         int credit = 0,creditemporal=0;
         String pregunta;
         while (credit < 5) {
-            int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
+            int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.correcion();
             String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
-            Entrada.correcion();
-            int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-            int num_credi = Entrada.readInt("Ingrese el numero de creditos");
-            Entrada.readText("");
+            int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");Entrada.correcion();
+            int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.correcion();
             String hora = Entrada.readText("Ingrese el horarario ");
             materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
             credit += num_credi;
@@ -60,18 +58,24 @@ public class Lab0301 {
                     int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.correcion();
                     String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
                     int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");
-                    credit += num_credi;Entrada.correcion();
+                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.correcion();
+                    credit += num_credi;
                     String hora = Entrada.readText("Ingrese el horario ");
                     for (Asignatura temp : materias) {
-                       if(hora.equalsIgnoreCase(temp.getHorario())){
-                           System.out.println("Horario ya inscrito previamente"); 
-                           credit=creditemporal;
+                       if(!hora.equalsIgnoreCase(temp.getHorario())){
+                           materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
+                           //materias.removeLast();
+                           break;
+                       }if(hora.equalsIgnoreCase(temp.getHorario())){
+                          System.out.println("Horario ya inscrito previamente");
+                         credit=creditemporal;
                        }
-                        
+                           
+                      
                     }
                     //credit += num_credi;
-                    materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
+                    
+                     
                 }
             } else {
 
@@ -120,5 +124,6 @@ public class Lab0301 {
         }
 
     }
+    
 
 }
