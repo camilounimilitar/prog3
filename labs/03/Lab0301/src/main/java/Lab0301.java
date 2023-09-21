@@ -18,11 +18,10 @@ public class Lab0301 {
 
     static LinkedList<Asignatura> materias = new LinkedList<>();
     static Queue<Registro> regist = new LinkedList<>();
-  
 
     public static void main(String[] args) {
 
-        registro_estudiante();
+        //registro_estudiante();
         lec_archivo();
         Salida.exit("Ingrese Las Materias A Inscribir");
         registro_asignaturas();
@@ -40,41 +39,49 @@ public class Lab0301 {
     }
 
     public static void registro_asignaturas() {
-        int credit = 0;
+        int credit = 0,creditemporal=0;
         String pregunta;
         while (credit < 5) {
             int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");
-            String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");Entrada.correcion();
+            String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
+            Entrada.correcion();
             int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-            int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.readText("");
+            int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+            Entrada.readText("");
             String hora = Entrada.readText("Ingrese el horarario ");
             materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
             credit += num_credi;
         }
         if (credit >= 5) {
-            pregunta = Entrada.readText("¿Continuar?");
+            pregunta = Entrada.readText("usted ya incribio el minimo de 5 creditos, ¿Continuar?");
             if (pregunta.equalsIgnoreCase("si")) {
                 while (credit < 16) {
-                    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.readText("");
+                    creditemporal=credit;
+                    int codigo = Entrada.readInt("Ingrese el Codigo de la asignatura ");Entrada.correcion();
                     String nom_asignatura = Entrada.readText("Ingrese Nombre Asignaruta");
                     int semestre = Entrada.readInt("Ingrese el Semestre al que pertenece");
-                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");Entrada.readText("");
-                    String hora = Entrada.readText("Ingrese el horarario ");
-                    credit += num_credi;
+                    int num_credi = Entrada.readInt("Ingrese el numero de creditos");
+                    credit += num_credi;Entrada.correcion();
+                    String hora = Entrada.readText("Ingrese el horario ");
+                    for (Asignatura temp : materias) {
+                       if(hora.equalsIgnoreCase(temp.getHorario())){
+                           System.out.println("Horario ya inscrito previamente"); 
+                           credit=creditemporal;
+                       }
+                        
+                    }
+                    //credit += num_credi;
                     materias.add(new Asignatura(codigo, nom_asignatura, semestre, num_credi, hora));
                 }
-            }  
-            //else{
-              
-            //}
+            } else {
+
+            }
 
         }
 
     }
 
     public static void reporte_registo_final() {
-        
-        
 
     }
 
@@ -100,20 +107,18 @@ public class Lab0301 {
 
         System.out.println(mensaje);
     }
-    
-    public static void exit_Asignatura( ){
-        
+
+    public static void exit_Asignatura() {
+
         //for(int i=0;i<materias.size();i++){
-            //Asignatura temporal= materias.get(i);
-           // System.out.println(temporal.getNombre());
-                    
-            
-       // }
-       for (Asignatura asignatura : materias){
-           System.out.println("Asignatura: " + asignatura.getCodigo());
-           //System.out.println("Nombre: "+ asignatura.getNombre());
-       }
-        
+        //Asignatura temporal= materias.get(i);
+        // System.out.println(temporal.getNombre());
+        // }
+        for (Asignatura asignatura : materias) {
+            System.out.println("Asignatura: " + asignatura.getCodigo());
+            //System.out.println("Nombre: "+ asignatura.getNombre());
+        }
+
     }
 
 }
