@@ -3,7 +3,7 @@ import java.util.TimerTask;
 public class temporizador extends TimerTask {
     private String mensaje;
 
-    public temporizador(String mensaje) {
+    public temporizador(String mensaje, int m) {
         this.mensaje = mensaje;
     }
 
@@ -12,10 +12,6 @@ public class temporizador extends TimerTask {
         System.out.println("Temporizador ha expirado: " + mensaje);
     }
     
-    public static void suma(){
-        
-        
-        
-    }
+    
     
 }

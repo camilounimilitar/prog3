@@ -11,8 +11,9 @@ public class Parcial_2 {
         //int opc = on.nextInt();
         int opc;
         do {
-            System.out.println("elija una opcion \n1.Programar un temporizador\n2.Sumar un aleatorio al tiempo actual\n3.Salir");
+            System.out.println("elija una opcion \n1.Programar un temporizador\n2.Programar una llamada\n3.Salir");
             opc = on.nextInt();
+            on.nextLine();
             switch (opc) {
                 case 1: {
                     while (true) {
@@ -33,8 +34,8 @@ public class Parcial_2 {
 
                         System.out.print("Ingrese el mensaje para este temporizador: ");
                         String mns = on.next();
-
-                        temporizador instancia = new temporizador(mns);
+                        int vacio=0;
+                        temporizador instancia = new temporizador(mns,vacio);
                         timer.schedule(instancia, timeEspera * 1000);
 
                         System.out.println();
@@ -52,6 +53,15 @@ public class Parcial_2 {
 
                 }
                 case 2:{
+                    System.out.println("ingrese el nombre de la persona a llamar");
+                    String nom=on.nextLine();
+                    //on.nextLine();
+                    System.out.println("¿En cuantos segundos debera ser llamdo?");
+                    int n2=on.nextInt();
+                    
+                    Llamada llam=new Llamada(nom);
+                    timer.schedule(llam, n2*1000);
+                    
                     
                 }
                 
@@ -61,6 +71,6 @@ public class Parcial_2 {
         on.close();
     }
     
-    
+ 
 
 }
