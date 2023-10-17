@@ -256,7 +256,14 @@ public class Grafica extends javax.swing.JFrame {
         JFreeChart grafico_cir= ChartFactory.createPieChart(item1, datos, true, true, false);
         
         ChartPanel panel_temporal=new ChartPanel(grafico_cir);//Recibe objeto de la clase JFreeChart
-
+        panel_temporal.setMouseWheelEnabled(true);
+        
+        
+        panel2.setLayout(new BorderLayout());
+        panel2.add(panel_temporal, BorderLayout.NORTH);
+        
+        pack();
+        repaint();
        
     }//GEN-LAST:event_grafica2ActionPerformed
 
