@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 import static javax.swing.SwingConstants.NORTH;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -12,7 +13,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ALEJANDRO
@@ -26,7 +26,8 @@ public class Grafica extends javax.swing.JFrame {
         initComponents();
     }
 
-    String item1;
+    String item1="";
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,6 +76,7 @@ public class Grafica extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Estadisticas Publicas");
 
+        Boton_aceptar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Boton_aceptar.setText("Aceptar");
         Boton_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,54 +96,54 @@ public class Grafica extends javax.swing.JFrame {
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 712, Short.MAX_VALUE)
+            .addGap(0, 765, Short.MAX_VALUE)
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
         panel12Layout.setHorizontalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                        .addComponent(Boton_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(332, 332, 332))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                        .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(274, 274, 274))))
             .addGroup(panel12Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(Barras)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addGap(0, 60, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                        .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(279, 279, 279))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                        .addComponent(Boton_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(337, 337, 337))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                .addGap(0, 39, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(243, 243, 243))
+                        .addGap(260, 260, 260))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
                         .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))))
+                        .addGap(33, 33, 33))))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(58, 58, 58)
+                .addGap(57, 57, 57)
                 .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(32, 32, 32)
                 .addComponent(Boton_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(53, 53, 53)
                 .addComponent(Barras)
                 .addGap(18, 18, 18)
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -171,26 +173,51 @@ public class Grafica extends javax.swing.JFrame {
     }//GEN-LAST:event_Box1ActionPerformed
 
     private void Boton_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_aceptarActionPerformed
-    
-        
-        item1=Box1.getSelectedItem().toString();
-        
+
+        item1 = Box1.getSelectedItem().toString();
+
     }//GEN-LAST:event_Boton_aceptarActionPerformed
 
     private void BarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarrasActionPerformed
+
+        if(item1.equalsIgnoreCase("Elige Una Opcion") || item1.equalsIgnoreCase("")){
+            JOptionPane.showMessageDialog(null, "OPCION INVALIDA");
+        }
+        if (item1.equalsIgnoreCase("Icfes por departamentos")) {
+            DefaultCategoryDataset dat = new DefaultCategoryDataset();
+
+            dat.setValue(265.8, "Icfes", "Bogota D.C");
+            dat.setValue(263.61,"Icfes","Santander");
+            dat.setValue(261.79,"Icfes","Boyaca");
+            dat.setValue(255.14, "Icfes", "Norte De Santander");
+            dat.setValue(254.51, "Icfes", "Cundinamarca");
+            dat.setValue(250.54, "Icfes", "Risaralda");
+            dat.setValue(250.04,"Icfes","Huila");
+            dat.setValue(248.03,"Icfes","Meta");
+            dat.setValue(247.07, "Icfes", "Casanare");
+            dat.setValue(242.03, "Icfes", "Antioquia");
+            dat.setValue(241.43, "Icfes", "Atlantico");
+            dat.setValue(240.81,"Icfes" ,"Tolima" );
+            dat.setValue(235.87, "Icfes", "Sucre");
+            dat.setValue(233.07,"Icfes","Caqueta");
+            dat.setValue(228.08, "Icfes", "Cauca");
+            dat.setValue(225.30, "Icfes", "Vichada");
+            dat.setValue(221.35,"Icfes","Magdalena");
+            dat.setValue(212.96, "Icfes", "Amazonas");
+            
+            JFreeChart barras = ChartFactory.createBarChart(item1, "Departamento", "Puntaje ICFES", dat, PlotOrientation.VERTICAL, true, true, false);
+            ChartPanel panel1 = new ChartPanel(barras);
+            panel1.setMouseWheelEnabled(true);
+            //panel1.setPreferredSize(new Dimension(250, 150));
+
+            panel2.setLayout(new BorderLayout());
+            panel2.add(panel1, BorderLayout.NORTH);
+            pack();
+            repaint();
+        }
+
         
-        DefaultCategoryDataset dat=new DefaultCategoryDataset();
-        
-        dat.setValue(265.8, "Icfes", "Bogota D.C");
-        JFreeChart barras= ChartFactory.createBarChart(item1, "Departamento", "Puntaje ICFES", dat, PlotOrientation.VERTICAL, true, true, false);
-        ChartPanel panel1=new ChartPanel(barras);
-        panel1.setMouseWheelEnabled(true);
-        panel1.setPreferredSize(new Dimension(250,150));
-        
-       panel2.setLayout(new BorderLayout());
-       panel2.add(panel1,BorderLayout.NORTH);
-       pack();
-       repaint();
+
     }//GEN-LAST:event_BarrasActionPerformed
 
     /**
