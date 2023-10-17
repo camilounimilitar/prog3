@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 import static javax.swing.SwingConstants.NORTH;
 import org.jfree.chart.ChartFactory;
@@ -8,6 +9,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -26,7 +28,7 @@ public class Grafica extends javax.swing.JFrame {
         initComponents();
     }
 
-    String item1="";
+    String item1 = "";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,6 +44,9 @@ public class Grafica extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         panel12 = new javax.swing.JPanel();
         Box1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -49,9 +54,6 @@ public class Grafica extends javax.swing.JFrame {
         Barras = new javax.swing.JButton();
         panel2 = new javax.swing.JPanel();
         grafica2 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -62,6 +64,12 @@ public class Grafica extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         jMenu5.setText("jMenu5");
+
+        jMenu6.setText("File");
+        jMenuBar3.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar3.add(jMenu7);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,11 +109,16 @@ public class Grafica extends javax.swing.JFrame {
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 319, Short.MAX_VALUE)
         );
 
         grafica2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         grafica2.setText("Crear Grafica De Torta");
+        grafica2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grafica2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
@@ -149,16 +162,8 @@ public class Grafica extends javax.swing.JFrame {
                     .addComponent(grafica2))
                 .addGap(18, 18, 18)
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,31 +191,31 @@ public class Grafica extends javax.swing.JFrame {
 
     private void BarrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarrasActionPerformed
 
-        if(item1.equalsIgnoreCase("Elige Una Opcion") || item1.equalsIgnoreCase("")){
+        if (item1.equalsIgnoreCase("Elige Una Opcion") || item1.equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(null, "OPCION INVALIDA");
         }
         if (item1.equalsIgnoreCase("Icfes por departamentos")) {
             DefaultCategoryDataset dat = new DefaultCategoryDataset();
 
             dat.setValue(265.8, "Icfes", "Bogota D.C");
-            dat.setValue(263.61,"Icfes","Santander");
-            dat.setValue(261.79,"Icfes","Boyaca");
+            dat.setValue(263.61, "Icfes", "Santander");
+            dat.setValue(261.79, "Icfes", "Boyaca");
             dat.setValue(255.14, "Icfes", "Norte De Santander");
             dat.setValue(254.51, "Icfes", "Cundinamarca");
             dat.setValue(250.54, "Icfes", "Risaralda");
-            dat.setValue(250.04,"Icfes","Huila");
-            dat.setValue(248.03,"Icfes","Meta");
+            dat.setValue(250.04, "Icfes", "Huila");
+            dat.setValue(248.03, "Icfes", "Meta");
             dat.setValue(247.07, "Icfes", "Casanare");
             dat.setValue(242.03, "Icfes", "Antioquia");
             dat.setValue(241.43, "Icfes", "Atlantico");
-            dat.setValue(240.81,"Icfes" ,"Tolima" );
+            dat.setValue(240.81, "Icfes", "Tolima");
             dat.setValue(235.87, "Icfes", "Sucre");
-            dat.setValue(233.07,"Icfes","Caqueta");
+            dat.setValue(233.07, "Icfes", "Caqueta");
             dat.setValue(228.08, "Icfes", "Cauca");
             dat.setValue(225.30, "Icfes", "Vichada");
-            dat.setValue(221.35,"Icfes","Magdalena");
+            dat.setValue(221.35, "Icfes", "Magdalena");
             dat.setValue(212.96, "Icfes", "Amazonas");
-            
+
             JFreeChart barras = ChartFactory.createBarChart(item1, "Departamento", "Puntaje ICFES", dat, PlotOrientation.VERTICAL, true, true, false);
             ChartPanel panel1 = new ChartPanel(barras);
             panel1.setMouseWheelEnabled(true);
@@ -221,21 +226,39 @@ public class Grafica extends javax.swing.JFrame {
             pack();
             repaint();
         }
-        
-        if(item1.equalsIgnoreCase("Colombianos En El Exterior")){
-            DefaultCategoryDataset dato=new DefaultCategoryDataset();
+
+        if (item1.equalsIgnoreCase("Colombianos En El Exterior")) {
+            DefaultCategoryDataset dato = new DefaultCategoryDataset();
             dato.setValue(1969497, "Pais", "USA");
             dato.setValue(1576950, "Pais", "España");
-            
-           // JfreeChart barras=ChartFactory
-            
-            
-            
+
+            JFreeChart barras = ChartFactory.createBarChart3D(item1, "PAIS", "Millones De Personas", dato, PlotOrientation.VERTICAL, true, true, false);
+            ChartPanel panel1 = new ChartPanel(barras);
+            panel1.setMouseWheelEnabled(true);
+
+            panel2.setLayout(new BorderLayout());
+            panel2.add(panel1, BorderLayout.NORTH);
+            pack();
+            repaint();
+
         }
 
-        
 
     }//GEN-LAST:event_BarrasActionPerformed
+
+    private void grafica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grafica2ActionPerformed
+
+        DefaultPieDataset datos=new DefaultPieDataset();//Crear Objeto de la clase DefaultPieDataset y despues asignar valores:
+        datos.setValue("Bogota D.C",265.8 );
+        datos.setValue("Santander",263.61);
+        
+        
+        JFreeChart grafico_cir= ChartFactory.createPieChart(item1, datos, true, true, false);
+        
+        ChartPanel panel_temporal=new ChartPanel(grafico_cir);//Recibe objeto de la clase JFreeChart
+
+       
+    }//GEN-LAST:event_grafica2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,13 +301,13 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Box1;
     private javax.swing.JButton grafica2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel panel12;
     private javax.swing.JPanel panel2;
