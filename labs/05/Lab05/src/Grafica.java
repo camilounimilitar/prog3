@@ -48,6 +48,7 @@ public class Grafica extends javax.swing.JFrame {
         Boton_aceptar = new javax.swing.JButton();
         Barras = new javax.swing.JButton();
         panel2 = new javax.swing.JPanel();
+        grafica2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -65,7 +66,7 @@ public class Grafica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Box1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Box1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elige Una Opcion", "ICFES Por Departamentos", "Item 2", " " }));
+        Box1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elige Una Opcion", "ICFES Por Departamentos", "Colombianos En El Exterior", " " }));
         Box1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Box1ActionPerformed(evt);
@@ -96,21 +97,28 @@ public class Grafica extends javax.swing.JFrame {
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGap(0, 798, Short.MAX_VALUE)
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 283, Short.MAX_VALUE)
         );
+
+        grafica2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        grafica2.setText("Crear Grafica De Torta");
 
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
         panel12Layout.setHorizontalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(260, 260, 260))
             .addGroup(panel12Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(Barras)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,16 +127,12 @@ public class Grafica extends javax.swing.JFrame {
                         .addGap(279, 279, 279))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
                         .addComponent(Boton_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(337, 337, 337))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                .addGap(0, 39, Short.MAX_VALUE)
-                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(337, 337, 337))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(260, 260, 260))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
-                        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addComponent(Barras)
+                        .addGap(142, 142, 142)
+                        .addComponent(grafica2)
+                        .addGap(156, 156, 156))))
         );
         panel12Layout.setVerticalGroup(
             panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,10 +144,12 @@ public class Grafica extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Boton_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(Barras)
+                .addGroup(panel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Barras)
+                    .addComponent(grafica2))
                 .addGap(18, 18, 18)
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -215,6 +221,17 @@ public class Grafica extends javax.swing.JFrame {
             pack();
             repaint();
         }
+        
+        if(item1.equalsIgnoreCase("Colombianos En El Exterior")){
+            DefaultCategoryDataset dato=new DefaultCategoryDataset();
+            dato.setValue(1969497, "Pais", "USA");
+            dato.setValue(1576950, "Pais", "España");
+            
+           // JfreeChart barras=ChartFactory
+            
+            
+            
+        }
 
         
 
@@ -259,6 +276,7 @@ public class Grafica extends javax.swing.JFrame {
     private javax.swing.JButton Barras;
     private javax.swing.JButton Boton_aceptar;
     private javax.swing.JComboBox<String> Box1;
+    private javax.swing.JButton grafica2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
