@@ -231,17 +231,17 @@ public class Grafica extends javax.swing.JFrame {
             DefaultCategoryDataset dato = new DefaultCategoryDataset();
             dato.setValue(1969497, "Pais", "USA");
             dato.setValue(1576950, "Pais", "España");
-            dato.setValue(459741,"Pais","Ecuador" );
-            dato.setValue(361965,"Pais","Canada" );
-            dato.setValue(336852,"Pais","Chile");
-            dato.setValue(316448,"Pais","Argentina");
-            dato.setValue(280020,"Pais","Australia" );
-            dato.setValue(221470,"Pais","Mexico");
-            dato.setValue(205735,"Pais","Fancia");
-            dato.setValue(191864,"Pais","Brazil");
-            dato.setValue(176559,"Pais","Reino Unido" );
-            dato.setValue(170190,"Alemania");
-            dato.setValue(163284,"Panama");
+            dato.setValue(459741, "Pais", "Ecuador");
+            dato.setValue(361965, "Pais", "Canada");
+            dato.setValue(336852, "Pais", "Chile");
+            dato.setValue(316448, "Pais", "Argentina");
+            dato.setValue(280020, "Pais", "Australia");
+            dato.setValue(221470, "Pais", "Mexico");
+            dato.setValue(205735, "Pais", "Fancia");
+            dato.setValue(191864, "Pais", "Brazil");
+            dato.setValue(176559, "Pais", "Reino Unido");
+            dato.setValue(170190, "Pais", "Alemania");
+            dato.setValue(163284, "Pais", "Panama");
 
             JFreeChart barras = ChartFactory.createBarChart3D(item1, "PAIS", "Millones De Personas", dato, PlotOrientation.VERTICAL, true, true, false);
             ChartPanel panel1 = new ChartPanel(barras);
