@@ -231,6 +231,17 @@ public class Grafica extends javax.swing.JFrame {
             DefaultCategoryDataset dato = new DefaultCategoryDataset();
             dato.setValue(1969497, "Pais", "USA");
             dato.setValue(1576950, "Pais", "España");
+            dato.setValue(459741,"Pais","Ecuador" );
+            dato.setValue(361965,"Pais","Canada" );
+            dato.setValue(336852,"Pais","Chile");
+            dato.setValue(316448,"Pais","Argentina");
+            dato.setValue(280020,"Pais","Australia" );
+            dato.setValue(221470,"Pais","Mexico");
+            dato.setValue(205735,"Pais","Fancia");
+            dato.setValue(191864,"Pais","Brazil");
+            dato.setValue(176559,"Pais","Reino Unido" );
+            dato.setValue(170190,"Alemania");
+            dato.setValue(163284,"Panama");
 
             JFreeChart barras = ChartFactory.createBarChart3D(item1, "PAIS", "Millones De Personas", dato, PlotOrientation.VERTICAL, true, true, false);
             ChartPanel panel1 = new ChartPanel(barras);
@@ -248,34 +259,67 @@ public class Grafica extends javax.swing.JFrame {
 
     private void grafica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grafica2ActionPerformed
 
-        if (item)
-        DefaultPieDataset datos=new DefaultPieDataset();//Crear Objeto de la clase DefaultPieDataset y despues asignar valores:
-        datos.setValue("Bogota D.C",265.8 );
-        datos.setValue("Santander",263.61);
-        datos.setValue("Boyaca",261.79 );
-        datos.setValue("Norte De Santander",255.14 );
-        datos.setValue("Cundinamarca",254.51 );
-        datos.setValue("Risaralda",250.54 );
-        datos.setValue("Huila",250.04 );
-        datos.setValue("Meta",248.03);
-        datos.setValue("Casanare",247.07);
-        datos.setValue("Tolima",240.81);
-        datos.setValue("Magdalena" , 221.35 );
-        datos.setValue("Vichada",225.30 );
-        
-        
-        JFreeChart grafico_cir= ChartFactory.createPieChart(item1, datos, true, true, false);
-        
-        ChartPanel panel_temporal=new ChartPanel(grafico_cir);//Recibe objeto de la clase JFreeChart
-        panel_temporal.setMouseWheelEnabled(true);
-        
-        
-        panel2.setLayout(new BorderLayout());
-        panel2.add(panel_temporal, BorderLayout.NORTH);
-        
-        pack();
-        repaint();
-       
+        if (item1.equalsIgnoreCase("Elige Una Opcion") || item1.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(null, "OPCION INVALIDA");
+        }
+        if (item1.equalsIgnoreCase("Icfes por departamentos")) {
+            DefaultPieDataset datos = new DefaultPieDataset();//Crear Objeto de la clase DefaultPieDataset y despues asignar valores:
+            datos.setValue("Bogota D.C", 265.8);
+            datos.setValue("Santander", 263.61);
+            datos.setValue("Boyaca", 261.79);
+            datos.setValue("Norte De Santander", 255.14);
+            datos.setValue("Cundinamarca", 254.51);
+            datos.setValue("Risaralda", 250.54);
+            datos.setValue("Huila", 250.04);
+            datos.setValue("Meta", 248.03);
+            datos.setValue("Casanare", 247.07);
+            datos.setValue("Tolima", 240.81);
+            datos.setValue("Magdalena", 221.35);
+            datos.setValue("Vichada", 225.30);
+
+            JFreeChart grafico_cir = ChartFactory.createPieChart(item1, datos, true, true, false);
+
+            ChartPanel panel_temporal = new ChartPanel(grafico_cir);//Recibe objeto de la clase JFreeChart
+            panel_temporal.setMouseWheelEnabled(true);
+
+            panel2.setLayout(new BorderLayout());
+            panel2.add(panel_temporal, BorderLayout.NORTH);
+
+            pack();
+            repaint();
+        }
+
+        if (item1.equalsIgnoreCase("Colombianos En El Exterior")) {
+
+            DefaultPieDataset datos = new DefaultPieDataset();//Crear Objeto de la clase DefaultPieDataset y despues asignar valores:
+            datos.setValue("USA", 1969497);
+            datos.setValue("España", 1576950);
+            datos.setValue("Ecuador", 459741);
+            datos.setValue("Canada", 361965);
+            datos.setValue("Chile", 336852);
+            datos.setValue("Argentina", 316448);
+            datos.setValue("Australia", 280020);
+            datos.setValue("Mexico", 221470);
+            datos.setValue("Fancia", 205735);
+            datos.setValue("Brazil", 191864);
+            datos.setValue("Reino Unido", 176559);
+            datos.setValue("Alemania", 170190);
+            datos.setValue("Panama", 163284);
+
+            JFreeChart grafico_cir = ChartFactory.createPieChart(item1, datos, true, true, false);
+
+            ChartPanel panel_temporal = new ChartPanel(grafico_cir);//Recibe objeto de la clase JFreeChart
+            panel_temporal.setMouseWheelEnabled(true);
+
+            panel2.setLayout(new BorderLayout());
+            panel2.add(panel_temporal, BorderLayout.NORTH);
+
+            pack();
+            repaint();
+
+        }
+
+
     }//GEN-LAST:event_grafica2ActionPerformed
 
     /**
