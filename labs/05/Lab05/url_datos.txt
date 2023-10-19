@@ -1,0 +1,8 @@
+Url para la realizacion del laboratorio 5
+
+https://www.datos.gov.co/Estad-sticas-Nacionales/Colombianos-en-el-exterior-de-25-a-40-a-os/3k8j-4d42  
+https://www.datos.gov.co/Educaci-n/PUNTAJE-ICFES-POR-DEPARTAMENTOS/x9vi-iv8c
+
+vizualizar de manera clara y objetiva los puntajes de la prueba ICFES obtenidas en distintos departamentos de Colombia con el objetivo de permitir la comparacion entre los estados actuales en el rendimiento academico de los estudiantes de ultimo grado del pais.
+
+vizualizar de forma grafica el numero de colombianos presentes en el exterior, realizando la debida separacion por pais.
