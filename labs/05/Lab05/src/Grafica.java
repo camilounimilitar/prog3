@@ -248,9 +248,20 @@ public class Grafica extends javax.swing.JFrame {
 
     private void grafica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grafica2ActionPerformed
 
+        if (item)
         DefaultPieDataset datos=new DefaultPieDataset();//Crear Objeto de la clase DefaultPieDataset y despues asignar valores:
         datos.setValue("Bogota D.C",265.8 );
         datos.setValue("Santander",263.61);
+        datos.setValue("Boyaca",261.79 );
+        datos.setValue("Norte De Santander",255.14 );
+        datos.setValue("Cundinamarca",254.51 );
+        datos.setValue("Risaralda",250.54 );
+        datos.setValue("Huila",250.04 );
+        datos.setValue("Meta",248.03);
+        datos.setValue("Casanare",247.07);
+        datos.setValue("Tolima",240.81);
+        datos.setValue("Magdalena" , 221.35 );
+        datos.setValue("Vichada",225.30 );
         
         
         JFreeChart grafico_cir= ChartFactory.createPieChart(item1, datos, true, true, false);
