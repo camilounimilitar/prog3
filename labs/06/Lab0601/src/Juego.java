@@ -118,6 +118,11 @@ public class Juego extends javax.swing.JFrame {
 
         Botoniniciar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Botoniniciar.setText("Iniciar Carrera");
+        Botoniniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotoniniciarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,6 +157,10 @@ public class Juego extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotoniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoniniciarActionPerformed
+        System.out.println(primer_auto.getLocation().x);
+    }//GEN-LAST:event_BotoniniciarActionPerformed
 
     /**
      * @param args the command line arguments
