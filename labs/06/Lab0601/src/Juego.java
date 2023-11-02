@@ -1,3 +1,6 @@
+
+import javax.swing.JLabel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,6 +19,26 @@ public class Juego extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    public JLabel getPrimerauto(){
+     return primer_auto;  
+    }
+    
+    public JLabel getSegundoauto(){
+        return segundo_auto;
+    }
+    public JLabel gettercerauto(){
+        return tercer_auto;
+    }
+    
+    public JLabel getcuartoauto(){
+        return cuarto_auto;
+    }
+    
+    public JLabel getmeta(){
+        return meta;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +50,29 @@ public class Juego extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         panel2 = new javax.swing.JPanel();
-        label1 = new javax.swing.JLabel();
+        primer_auto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        segundo_auto = new javax.swing.JLabel();
+        tercer_auto = new javax.swing.JLabel();
+        cuarto_auto = new javax.swing.JLabel();
+        meta = new javax.swing.JLabel();
+        Botoniniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel3.setText("Carrera");
 
-        label1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
+        primer_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        segundo_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
+        segundo_auto.setText("jLabel1");
+
+        tercer_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
+        tercer_auto.setText("jLabel5");
+
+        cuarto_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
+        cuarto_auto.setText("jLabel4");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -51,36 +84,59 @@ public class Juego extends javax.swing.JFrame {
                         .addGap(217, 217, 217)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(15, 15, 15)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tercer_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(primer_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(segundo_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(cuarto_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(label1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel2Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(primer_auto)
+                        .addGap(18, 18, 18)
+                        .addComponent(segundo_auto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addGap(15, 15, 15)
+                        .addComponent(tercer_auto)
+                        .addGap(26, 26, 26)
+                        .addComponent(cuarto_auto)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
+
+        Botoniniciar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        Botoniniciar.setText("Iniciar Carrera");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(416, 416, 416)
-                .addComponent(jLabel3)
-                .addContainerGap(459, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(416, 416, 416)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 387, Short.MAX_VALUE)
+                .addComponent(Botoniniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(377, 377, 377))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +145,9 @@ public class Juego extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(106, 106, 106)
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addComponent(Botoniniciar)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         pack();
@@ -134,10 +192,14 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton Botoniniciar;
+    private javax.swing.JLabel cuarto_auto;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel label1;
+    private javax.swing.JLabel meta;
     private javax.swing.JPanel panel2;
+    private javax.swing.JLabel primer_auto;
+    private javax.swing.JLabel segundo_auto;
+    private javax.swing.JLabel tercer_auto;
     // End of variables declaration//GEN-END:variables
 }
