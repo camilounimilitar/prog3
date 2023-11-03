@@ -165,7 +165,10 @@ public class Juego extends javax.swing.JFrame {
         primer_auto.setLocation(0, primer_auto.getLocation().y);
         segundo_auto.setLocation(0, segundo_auto.getLocation().y);
         Carrera auto1=new Carrera(primer_auto,this);
-        Carrera auto2=new Carrera(segundo_auto,this);    
+        Carrera auto2=new Carrera(segundo_auto,this); 
+        
+        auto1.start();
+        auto2.start();
         
     }//GEN-LAST:event_BotoniniciarActionPerformed
 
