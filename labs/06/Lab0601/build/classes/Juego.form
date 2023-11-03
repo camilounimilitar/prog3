@@ -53,7 +53,7 @@
               <Component id="panel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Component id="Botoniniciar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="312" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -157,6 +157,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="meta">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenes/met.png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

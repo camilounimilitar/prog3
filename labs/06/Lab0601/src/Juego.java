@@ -74,6 +74,8 @@ public class Juego extends javax.swing.JFrame {
         cuarto_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rx73.png"))); // NOI18N
         cuarto_auto.setText("jLabel4");
 
+        meta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/met.png"))); // NOI18N
+
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
@@ -152,7 +154,7 @@ public class Juego extends javax.swing.JFrame {
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
                 .addComponent(Botoniniciar)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
