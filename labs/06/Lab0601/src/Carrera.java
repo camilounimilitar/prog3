@@ -1,5 +1,6 @@
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -37,11 +38,17 @@ public class Carrera extends Thread {
                     etiqueta.setLocation(etiqueta.getLocation().x + 8, etiqueta.getLocation().y);
                     etiqueta.repaint();
                 } else {
-
+                    break;
                 }
 
             } catch (Exception e) {
                 System.out.println(e);
+            }
+            
+            if(etiqueta.getLocation().x>=auto.getmeta().getLocation().x-150){
+                if((autos[0]>autos[1])&&(autos[0]>autos[2])&&(autos[0]>autos[3])){
+                   JOptionPane.showMessageDialog(null, "Gano El primer auto");
+                }
             }
         }
 

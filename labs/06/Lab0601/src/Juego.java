@@ -161,7 +161,12 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotoniniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoniniciarActionPerformed
-        System.out.println(primer_auto.getLocation().x);
+        
+        primer_auto.setLocation(0, primer_auto.getLocation().y);
+        segundo_auto.setLocation(0, segundo_auto.getLocation().y);
+        Carrera auto1=new Carrera(primer_auto,this);
+        Carrera auto2=new Carrera(segundo_auto,this);    
+        
     }//GEN-LAST:event_BotoniniciarActionPerformed
 
     /**
