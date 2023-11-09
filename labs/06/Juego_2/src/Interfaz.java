@@ -14,6 +14,19 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
+        
+        variable1 = new Logic(fig1.getSize());        
+        fig1.add(variable1);
+        fig1.repaint();   
+        variable2= new Logic(fig2.getSize());        
+        fig2.add(variable2);
+        fig2.repaint(); 
+        variable3 = new Logic(fig3.getSize());        
+        fig3.add(variable3);
+        fig3.repaint();   
+        //variable4 = new Logic(fig4.getSize());        
+        //fig4.add(variable4);
+        //fig4.repaint(); 
     }
 
     /**
@@ -92,6 +105,13 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    Logic variable1;
+    Logic variable2;
+    Logic variable3;
+    Logic variable4;
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
