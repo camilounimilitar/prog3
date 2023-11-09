@@ -89,10 +89,9 @@ public class Juego extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tercer_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(primer_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(segundo_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addComponent(cuarto_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(primer_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cuarto_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(segundo_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -100,22 +99,21 @@ public class Juego extends javax.swing.JFrame {
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel2Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(primer_auto)
-                        .addGap(18, 18, 18)
-                        .addComponent(segundo_auto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(15, 15, 15)
-                        .addComponent(tercer_auto)
-                        .addGap(26, 26, 26)
-                        .addComponent(cuarto_auto)))
+                .addGap(46, 46, 46)
+                .addComponent(primer_auto)
+                .addGap(18, 18, 18)
+                .addComponent(segundo_auto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(15, 15, 15)
+                .addComponent(tercer_auto)
+                .addGap(26, 26, 26)
+                .addComponent(cuarto_auto)
                 .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Botoniniciar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -164,11 +162,19 @@ public class Juego extends javax.swing.JFrame {
         
         primer_auto.setLocation(0, primer_auto.getLocation().y);
         segundo_auto.setLocation(0, segundo_auto.getLocation().y);
+        tercer_auto.setLocation(0, tercer_auto.getLocation().y);
+        cuarto_auto.setLocation(0,cuarto_auto.getLocation().y);
+       
+                
         Carrera auto1=new Carrera(primer_auto,this);
         Carrera auto2=new Carrera(segundo_auto,this); 
+        Carrera auto3=new Carrera(tercer_auto,this);
+        Carrera auto4=new Carrera(cuarto_auto,this);
         
         auto1.start();
         auto2.start();
+        auto3.start();
+        auto4.start();
         
     }//GEN-LAST:event_BotoniniciarActionPerformed
 

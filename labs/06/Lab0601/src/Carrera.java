@@ -33,9 +33,11 @@ public class Carrera extends Thread {
                 autos[1] = auto.getSegundoauto().getLocation().x;
                 autos[2] = auto.gettercerauto().getLocation().x;
                 autos[3] = auto.getcuartoauto().getLocation().x;
-
-                if ((autos[0] < auto.getmeta().getLocation().x - 150) && (autos[1] < auto.getmeta().getLocation().x - 150)) {
-                    etiqueta.setLocation(etiqueta.getLocation().x + 8, etiqueta.getLocation().y);
+                
+                
+             
+                if ((autos[0] < auto.getmeta().getLocation().x - 150) && (autos[1] < auto.getmeta().getLocation().x - 150) && (autos[2]<auto.getmeta().getLocation().x-150)&&(autos[3]<auto.getmeta().getLocation().x-150)) {
+                    etiqueta.setLocation(etiqueta.getLocation().x + 20, etiqueta.getLocation().y);
                     etiqueta.repaint();
                 } else {
                     break;
@@ -45,10 +47,20 @@ public class Carrera extends Thread {
                 System.out.println(e);
             }
             
-            if(etiqueta.getLocation().x>=auto.getmeta().getLocation().x-150){
+            if(etiqueta.getLocation().x>=auto.getmeta().getLocation().x-152){
                 if((autos[0]>autos[1])&&(autos[0]>autos[2])&&(autos[0]>autos[3])){
                    JOptionPane.showMessageDialog(null, "Gano El primer auto");
                 }
+                else if((autos[1]>autos[0])&&(autos[1]>autos[2])&&(autos[1]>autos[3])){
+                   JOptionPane.showMessageDialog(null, "Gano El Segundo Auto");
+                }
+                else if((autos[2]>autos[0])&&(autos[2]>autos[1])&&(autos[2]>autos[3])){
+                   JOptionPane.showMessageDialog(null, "Gano El tercer Auto");
+                }
+                else if((autos[3]>autos[0])&&(autos[3]>autos[1])&&(autos[3]>autos[2])){
+                   JOptionPane.showMessageDialog(null, "Gano El cuarto Auto");
+                }
+                
             }
         }
 
